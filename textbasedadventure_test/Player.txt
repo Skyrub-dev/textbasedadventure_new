@@ -1,4 +1,4 @@
-//CREATED: Mon Nov  8 19:51:08 2021
+//CREATED: Sun Nov 14 01:16:30 2021
 
 //MODIFY AT YOUR OWN RISK
 
@@ -6,7 +6,7 @@ tom
 Business
 
 //PERSONAL ATTRIBUTES
-0
+3
 0
 0
 0

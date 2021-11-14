@@ -19,6 +19,7 @@ https://stackoverflow.com/questions/478075/creating-files-in-c
 https://social.msdn.microsoft.com/Forums/vstudio/en-US/996e8247-32ce-40f7-b940-48578e970550/how-to-make-a-save-file-for-a-textbased-game-in-console-application-c
 
 https://gamedev.net/forums/topic/499116-saving-and-loading-in-a-text-based-game/499116/
+https://stackoverflow.com/questions/29958097/how-to-update-a-c-string-within-a-function
 */
 
 class MMenu
@@ -51,7 +52,11 @@ protected:
 class CharacterCreate
 {
 public:
-	std::string name;
+	/*void setname(std::string name)
+	{
+		name = name;
+	}*/
+	
 	std::string bckgrnd[3] = { "Business", "Army", "Other" }; //obviously finish array maybe add descriptions?
 	
 	time_t current = time(0);
@@ -94,11 +99,11 @@ public:
 		std::cout << "intro\n\n";
 		std::cout << "These are the attributes you character will begin with:" << "\n\n";
 
-		strength += 3;
-		intelligence += 6;
-		agility += 4;
-		perception += 5;
-		luck += 7;
+		strength = 3;
+		intelligence = 6;
+		agility = 4;
+		perception = 5;
+		luck = 7;
 
 		farming += 2;
 		combat += 1;
@@ -124,7 +129,26 @@ public:
 	
 };
 
-void newcharacter(int choice = 0)
+void createfile(std::string& name, int& strength)
+{
+	CharacterCreate* intro = new CharacterCreate;
+
+	CharacterCreate newchar;
+	
+	std::ofstream newfile("Player.txt");
+	newfile << "//CREATED: " << newchar.datetime;
+	newfile << "\n//MODIFY AT YOUR OWN RISK\n\n";
+	newfile << name << "\n";
+	newfile << newchar.bckgrnd[0] << "\n\n";
+	newfile << "//PERSONAL ATTRIBUTES\n";
+	newfile << strength << "\n";
+	newfile << newchar.intelligence << "\n";
+	newfile << newchar.agility << "\n";
+	newfile << newchar.perception << "\n";
+	newfile << newchar.luck << "\n";
+}
+
+void newcharacter()
 {
 	CharacterCreate* intro = new CharacterCreate;
 	CharacterCreate newchar;
@@ -132,15 +156,17 @@ void newcharacter(int choice = 0)
 	Business* secondptr = new Business;
 	Business buschar;
 
+	std::string name;
 	std::string confirm;
-	
+	int choice = 0;
+
 	std::cout << "insert intro here";
 	std::cout << "What kind of hero are you?\n\n";
 
 	std::cout << "Please enter a name:\n";
-	std::cin >> newchar.name;
+	std::cin >> name;
 	
-	std::cout << "Ah yes, " << newchar.name << ", It's becoming more clearer, what kind of person were they in the past?\n";
+	std::cout << "Ah yes, " << name << ", It's becoming more clearer, what kind of person were they in the past?\n";
 	
 	for (int i = 0; i < 3; i++)
 	{
@@ -162,18 +188,34 @@ void newcharacter(int choice = 0)
 		{
 			std::cout << "begin game here";
 
+			newchar.strength += 3;
+			newchar.intelligence += 6;
+			newchar.agility += 4;
+			newchar.perception += 5;
+			newchar.luck += 7;
+
+			newchar.farming += 2;
+			newchar.combat += 1;
+			newchar.leadership += 8;
+			newchar.bartering += 9;
+
+			//find a way to send all properties, maybe by use of a function? through to the create file function
+
+			createfile(name, newchar.strength);
+
+
 			//THIS WORKS BUT NEED TO REDUCE REDUNDANCY
-			std::ofstream newfile("Player.txt");
+			/*std::ofstream newfile("Player.txt");
 			newfile << "//CREATED: " << newchar.datetime;
 			newfile << "\n//MODIFY AT YOUR OWN RISK\n\n";
 			newfile << newchar.name << "\n";
 			newfile << newchar.bckgrnd[0] << "\n\n";
 			newfile << "//PERSONAL ATTRIBUTES\n";
-			newfile << newchar.strength << "\n";
-			newfile << newchar.intelligence << "\n";
-			newfile << newchar.agility << "\n";
-			newfile << newchar.perception << "\n";
-			newfile << newchar.luck << "\n";
+			newfile << buschar.strength << "\n";
+			newfile << buschar.intelligence << "\n";
+			newfile << buschar.agility << "\n";
+			newfile << buschar.perception << "\n";
+			newfile << buschar.luck << "\n";*/
 
 			//TO NEXT CPP FILE
 		}
