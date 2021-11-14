@@ -1,0 +1,13 @@
+//CREATED: Sun Nov 14 18:51:56 2021
+
+//MODIFY AT YOUR OWN RISK
+
+tom
+Army
+
+//PERSONAL ATTRIBUTES
+Strength = 7
+Intelligence = 6
+Agility = 8
+Perception = 7
+Luck = 4

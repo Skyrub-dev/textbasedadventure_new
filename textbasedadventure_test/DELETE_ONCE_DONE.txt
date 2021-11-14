@@ -1,0 +1,18 @@
+/*LOWDOWN FOR FURTURE TOM: The main menu needs some tweaking to get it to work properly but for the most part
+it works, once you've finished the character creator and created all the stats and imported them to the
+newcharacter function etc etc, 
+create a new file for the actual game, this file I'm intending to only be for the menu
+and character creation, you need to create the player's file and then load it into the second cpp file
+for the actual game and commence from there*/
+
+/*Links used today:
+https://www.geeksforgeeks.org/array-strings-c-3-different-ways-create/
+https://mrcodehunter.com/cpp-expression-must-have-class-type-error/#:~:text=In%20c%2B%2B%20whenever%20you%20are%20calling%20any%20function,object%20then%20you%20need%20to%20use%20dot%28.%29%20.
+https://www.tutorialspoint.com/the-best-way-to-check-if-a-file-exists-using-standard-c-cplusplus
+https://www.tutorialspoint.com/cplusplus-array-of-strings
+https://stackoverflow.com/questions/478075/creating-files-in-c
+https://social.msdn.microsoft.com/Forums/vstudio/en-US/996e8247-32ce-40f7-b940-48578e970550/how-to-make-a-save-file-for-a-textbased-game-in-console-application-c
+
+https://gamedev.net/forums/topic/499116-saving-and-loading-in-a-text-based-game/499116/
+https://stackoverflow.com/questions/29958097/how-to-update-a-c-string-within-a-function
+*/
